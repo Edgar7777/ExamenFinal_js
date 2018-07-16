@@ -28,7 +28,7 @@ export const RUTAS_APP: Routes = [
       },
       {
         path: '',
-        redirectTo: 'entrenador/',
+        redirectTo: 'Entrenador',
         pathMatch: 'full'
       },
     ]
@@ -42,7 +42,7 @@ export const RUTAS_APP: Routes = [
   },
   {
     path: '',
-    redirectTo: 'Home/',
+    redirectTo: 'Home',
     pathMatch: 'full'
   },
   {
