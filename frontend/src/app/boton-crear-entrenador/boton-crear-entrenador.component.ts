@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './boton-crear-entrenador.component.html',
   styleUrls: ['./boton-crear-entrenador.component.css']
 })
+
 export class BotonCrearEntrenadorComponent implements OnInit {
 
   constructor() { }

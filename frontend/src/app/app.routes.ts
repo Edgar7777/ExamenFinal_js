@@ -1,5 +1,5 @@
-import {RouterModule,Routes} from "@angular/router";
-import {AutorizacionService} from "./autorizacion.service";
+import { RouterModule, Routes } from "@angular/router";
+import { AutorizacionService } from "./autorizacion.service";
 import { RutaInicioComponent } from './ruta-inicio/ruta-inicio.component';
 import { RutaIniUsuarioComponent } from './ruta-ini-usuario/ruta-ini-usuario.component';
 import { RutaIniPermisosComponent } from './ruta-ini-permisos/ruta-ini-permisos.component';
@@ -7,12 +7,20 @@ import { RutaFaqComponent } from './ruta-faq/ruta-faq.component';
 import { RutaNoEncontradaComponent } from './ruta-no-encontrada/ruta-no-encontrada.component';
 import { EntrenadorComponent } from './entrenador/entrenador.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 
 export const RUTAS_APP: Routes = [
-    {path: 'Home',
+
+  {
+    path: 'Formulario/Entrenador',
+    component: FormularioEntrenadorComponent
+  },
+  {
+    path: 'Home',
     component: RutaInicioComponent
-    },
-    {path: 'Entrenador',
+  },
+  {
+    path: 'Entrenador',
     component: EntrenadorComponent,
     children: [
       {
@@ -32,6 +40,10 @@ export const RUTAS_APP: Routes = [
         pathMatch: 'full'
       },
     ]
+  },
+  {
+    path: 'Entrenador/:id',
+    component: EntrenadorComponent,
   },
   {
     path: 'faq',

@@ -18,6 +18,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { BotonCrearEntrenadorComponent } from './boton-crear-entrenador/boton-crear-entrenador.component';
 import { BotonActualizarEntrenadorComponent } from './boton-actualizar-entrenador/boton-actualizar-entrenador.component';
 import { BotonEliminarEntrenadorComponent } from './boton-eliminar-entrenador/boton-eliminar-entrenador.component';
+import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { BotonEliminarEntrenadorComponent } from './boton-eliminar-entrenador/bo
     PokemonComponent,
     BotonCrearEntrenadorComponent,
     BotonActualizarEntrenadorComponent,
-    BotonEliminarEntrenadorComponent
+    BotonEliminarEntrenadorComponent,
+    FormularioEntrenadorComponent
   ],
   imports: [
     BrowserModule,
