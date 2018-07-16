@@ -14,6 +14,8 @@ import { RutaIniUsuarioComponent } from './ruta-ini-usuario/ruta-ini-usuario.com
 import { RutaIniPermisosComponent } from './ruta-ini-permisos/ruta-ini-permisos.component';
 import { RutaFaqComponent } from './ruta-faq/ruta-faq.component';
 import { RutaNoEncontradaComponent } from './ruta-no-encontrada/ruta-no-encontrada.component';
+import { EntrenadorComponent } from './entrenador/entrenador.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { RutaNoEncontradaComponent } from './ruta-no-encontrada/ruta-no-encontra
     RutaIniUsuarioComponent,
     RutaIniPermisosComponent,
     RutaFaqComponent,
-    RutaNoEncontradaComponent
+    RutaNoEncontradaComponent,
+    EntrenadorComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,

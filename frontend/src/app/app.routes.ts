@@ -1,19 +1,23 @@
-import {Routes} from "@angular/router";
+import {RouterModule,Routes} from "@angular/router";
 import {AutorizacionService} from "./autorizacion.service";
 import { RutaInicioComponent } from './ruta-inicio/ruta-inicio.component';
 import { RutaIniUsuarioComponent } from './ruta-ini-usuario/ruta-ini-usuario.component';
 import { RutaIniPermisosComponent } from './ruta-ini-permisos/ruta-ini-permisos.component';
 import { RutaFaqComponent } from './ruta-faq/ruta-faq.component';
 import { RutaNoEncontradaComponent } from './ruta-no-encontrada/ruta-no-encontrada.component';
+import { EntrenadorComponent } from './entrenador/entrenador.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 export const RUTAS_APP: Routes = [
-  {
-    path: 'inicio/entrenador',
-    component: RutaInicioComponent,
+    {path: 'Home',
+    component: RutaInicioComponent
+    },
+    {path: 'Entrenador',
+    component: EntrenadorComponent,
     children: [
       {
-        path: 'pokemon',
-        component: RutaIniUsuarioComponent
+        path: 'Pokemon',
+        component: PokemonComponent
       },
       {
         path: 'permisos',
@@ -24,7 +28,7 @@ export const RUTAS_APP: Routes = [
       },
       {
         path: '',
-        redirectTo: 'entrenador/1/pokemon/1',
+        redirectTo: 'entrenador/',
         pathMatch: 'full'
       },
     ]
@@ -38,7 +42,7 @@ export const RUTAS_APP: Routes = [
   },
   {
     path: '',
-    redirectTo: 'inicio/',
+    redirectTo: 'Home/',
     pathMatch: 'full'
   },
   {
