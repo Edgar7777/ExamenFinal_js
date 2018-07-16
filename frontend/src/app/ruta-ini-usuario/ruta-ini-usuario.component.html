@@ -1,3 +1,18 @@
-<p>
-  ruta-ini-usuario works!
-</p>
+<div class="container">
+  <div class="row">
+    <a *ngFor="let entrenador of entrenadores" class="col-1-4">
+      <div class="module entrenador">
+        <h4>{{entrenador.nombres}}</h4>
+        <br />
+        <br />
+        <div class="row">
+          <a *ngFor="let pokemon of entrenador.pokemons" class="col-1-4">
+            <div class="module entrenador">
+              <h4>{{pokemon.nombrePokemon}}</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

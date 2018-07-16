@@ -1,4 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Entrenador } from '../entrenador';
+import { Pokemon } from '../pokemon';
+import { EntrenadorService } from '../entrenador.service';
+import { PokemonService } from '../pokemon.service';
+
+import { BuscadorComponent } from '../buscador/buscador.component';
+import { BotonCargarMasComponent } from '../boton-cargar-mas/boton-cargar-mas.component';
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -8,29 +15,15 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class RutaIniUsuarioComponent implements OnInit {
 
-  constructor(
-    private _activatedRoute: ActivatedRoute) {
+    constructor(private entrenadorService: EntrenadorService) { }
+
+    ngOnInit() {
+      this.getEntrenadores();
+    }
+    entrenadores : Entrenador[];
+
+    getEntrenadores(): void{
+      this.entrenadorService.getEntrenadores()
+      .subscribe(entrenadores => this.entrenadores = entrenadores);
+    }
   }
-
-  ngOnInit() {
-    console.log('principio');
-    const observableParametros$ = this
-      ._activatedRoute
-      .params;
-
-    observableParametros$
-      .subscribe(
-        (respuestaOk) => {
-          console.log('Ok', respuestaOk);
-        },
-        (respuestaError) => {
-          console.log('Error', respuestaError);
-        },
-        () => { // respuestaCompletado
-          console.log('Completado');
-        }
-      );
-    console.log('fin');
-  }
-
-}
