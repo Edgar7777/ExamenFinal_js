@@ -9,7 +9,7 @@ import { RutaNoEncontradaComponent } from './ruta-no-encontrada/ruta-no-encontra
 export const RUTAS_APP: Routes = [
   {
     path: 'inicio/entrenador',
-    component: RutaIniUsuarioComponent,
+    component: RutaInicioComponent,
     children: [
       {
         path: 'pokemon',
@@ -24,7 +24,7 @@ export const RUTAS_APP: Routes = [
       },
       {
         path: '',
-        redirectTo: 'entrenador/1/pokemon/25',
+        redirectTo: 'entrenador/1/pokemon/1',
         pathMatch: 'full'
       },
     ]

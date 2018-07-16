@@ -9,18 +9,19 @@
   </a>
 </li> -->
 <div [routerLink]="[
-'/inicio'
+'/inicio',
+'entrenador'
 ]">
-<app-inicio></app-inicio>
-
+<app-ruta-inicio></app-ruta-inicio>
+<router-outlet></router-outlet>
 </div>
+
 <div [routerLink]="[
 '/inicio',
 'entrenador',
 '1',
-'pokemon',
-'1'
+'pokemon'
 ]">
-
+<app-ruta-ini-usuario></app-ruta-ini-usuario>
+<router-outlet></router-outlet>
 </div>
-<!-- <app-ruta-inicio></app-ruta-inicio> -->
