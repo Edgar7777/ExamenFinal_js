@@ -1,4 +1,6 @@
 <h3>EXAMEN POKEMON</h3>
+
+<app-buscador></app-buscador>
 <!-- <div class="grid grid-pad">
   <a *ngFor="let entrenador of entrenadores" class="col-1-4">
     <div class="module entrenador">
@@ -13,18 +15,31 @@
     </div>
   </a>
 </div> -->
-<div class="row">
-  <a *ngFor="let entrenador of entrenadores" class="col-1-4">
-    <div class="module entrenador">
-      <h4>{{entrenador.nombres}}</h4>
-    </div>
-  </a>
-</div>
-<br />
-<div class="row">
-        <a *ngFor="let pokemon of pokemons" class="col-1-4">
-          <div class="module pokemon">
-            <h4>{{pokemon.nombrePokemon}}</h4>
-          </div>
-        </a>
+
+<div class="container">
+
+  <h1>ENTRENADORES</h1>
+  <div class="row">
+    <a *ngFor="let entrenador of entrenadores" class="col-1-4">
+      <div class="module entrenador">
+        <h4>{{entrenador.nombres}}</h4>
+      </div>
+    </a>
+  </div>
+  <div align="center" class="container">
+    <app-boton-cargar-mas></app-boton-cargar-mas>
+  </div>
+
+  <br />
+  <h1>POKEMONS</h1>
+  <div class="row">
+    <a *ngFor="let pokemon of pokemons" class="col-1-4">
+      <div class="module pokemon">
+        <h4>{{pokemon.nombrePokemon}}</h4>
+      </div>
+    </a>
+  </div>
+  <div align="center" class="container">
+    <app-boton-cargar-mas></app-boton-cargar-mas>
+  </div>
 </div>

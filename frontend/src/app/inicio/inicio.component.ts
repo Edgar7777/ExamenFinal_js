@@ -4,6 +4,9 @@ import { Pokemon } from '../pokemon';
 import { EntrenadorService } from '../entrenador.service';
 import { PokemonService } from '../pokemon.service';
 
+import { BuscadorComponent } from '../buscador/buscador.component';
+import { BotonCargarMasComponent } from '../boton-cargar-mas/boton-cargar-mas.component';
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
