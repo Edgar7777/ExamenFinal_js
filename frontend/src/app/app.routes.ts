@@ -8,6 +8,7 @@ import { RutaNoEncontradaComponent } from './ruta-no-encontrada/ruta-no-encontra
 import { EntrenadorComponent } from './entrenador/entrenador.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
+import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/mostrar-detalle-entrenador.component';
 
 export const RUTAS_APP: Routes = [
 
@@ -43,7 +44,7 @@ export const RUTAS_APP: Routes = [
   },
   {
     path: 'Entrenador/:id',
-    component: EntrenadorComponent,
+    component: MostrarDetalleEntrenadorComponent,
   },
   {
     path: 'faq',

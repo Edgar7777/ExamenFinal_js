@@ -18,6 +18,14 @@ export class EntrenadorService {
 
   constructor(private http: HttpClient) { }
 
+//METODO GET POR ID
+  getEntrenador(id: number): Observable<Entrenador> {
+    const url = `${this.entrenadorUrl}/${id}`;
+    return this.http.get<Entrenador>(url).pipe(
+      catchError(this.handleError<Entrenador>(`getEntrenador id=${id}`))
+    );
+  }
+
   //METODO GET***************************
 
   getEntrenadores(): Observable<Entrenador[]> {
@@ -61,4 +69,12 @@ export class EntrenadorService {
      catchError(this.handleError<Entrenador>('deleteEntrenador'))
    );
  }
+
+ //METODO PUT
+ updateEntrenador (entrenador: Entrenador): Observable<any> {
+    return this.http.put(this.entrenadorUrl, entrenador, httpOptions)
+    .pipe(
+      catchError(this.handleError<any>('updateEntrenador'))
+    );
+  }
 }

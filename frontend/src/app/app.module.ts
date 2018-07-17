@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule }  from '@angular/common/http';
 import {RouterModule} from "@angular/router";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import {AutorizacionService} from "./autorizacion.service";
 
 import {RUTAS_APP} from "./app.routes";
@@ -19,6 +21,7 @@ import { BotonCrearEntrenadorComponent } from './boton-crear-entrenador/boton-cr
 import { BotonActualizarEntrenadorComponent } from './boton-actualizar-entrenador/boton-actualizar-entrenador.component';
 import { BotonEliminarEntrenadorComponent } from './boton-eliminar-entrenador/boton-eliminar-entrenador.component';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
+import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/mostrar-detalle-entrenador.component';
 
 
 @NgModule({
@@ -36,11 +39,14 @@ import { FormularioEntrenadorComponent } from './formulario-entrenador/formulari
     BotonCrearEntrenadorComponent,
     BotonActualizarEntrenadorComponent,
     BotonEliminarEntrenadorComponent,
-    FormularioEntrenadorComponent
+    FormularioEntrenadorComponent,
+    MostrarDetalleEntrenadorComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       RUTAS_APP,
       {

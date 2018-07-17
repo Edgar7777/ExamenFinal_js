@@ -10,10 +10,29 @@
  <input #apellidoEntrenador type="text" class="form-control" aria-label="Sizing example input"
  aria-describedby="inputGroup-sizing-sm">
   </label>
+<br />
+  <label>Fecha Nacimiento:
+ <input #fechaNacimiento type="text" class="form-control" aria-label="Sizing example input"
+ aria-describedby="inputGroup-sizing-sm">
+  </label>
+  <br />
+    <label>Numero Medallas:
+   <input #numeroMedallas type="text" class="form-control" aria-label="Sizing example input"
+   aria-describedby="inputGroup-sizing-sm">
+    </label>
+
   <!-- (click) passes input value to add() and then clears the input -->
   <br />
-  <button type="button" class="btn btn-submit" (click)="addEntrenador(nombreEntrenador.value, apellidoEntrenador.value);
-   nombreEntrenador.value=''; apellidoEntrenador.value=''">
+  <button type="button" class="btn btn-submit" (click)="addEntrenador(
+  nombreEntrenador.value,
+  apellidoEntrenador.value,
+  fechaNacimiento.value,
+  numeroMedallas.value
+  );
+   nombreEntrenador.value='';
+   fechaNacimiento.value='';
+   apellidoEntrenador.value='';
+   numeroMedallas.value=''">
     Crear
   </button>
 </div>
