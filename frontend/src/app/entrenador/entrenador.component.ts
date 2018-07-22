@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Entrenador } from '../entrenador';
 import { EntrenadorService } from '../entrenador.service';
-
+import { Location } from '@angular/common';
 import { BuscadorComponent } from '../buscador/buscador.component';
 import { BotonCargarMasComponent } from '../boton-cargar-mas/boton-cargar-mas.component';
-import {ActivatedRoute} from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-entrenador',
@@ -13,19 +13,35 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class EntrenadorComponent implements OnInit {
 
-    constructor(private entrenadorService: EntrenadorService) { }
+  @Input() entrenador: Entrenador;
 
-    ngOnInit() {
-      this.getEntrenadores();
-    }
-    entrenadores : Entrenador[];
+  constructor(
+    private route: ActivatedRoute,
+    private entrenadorService: EntrenadorService,
+    private location: Location
+  ) { }
 
-    getEntrenadores(): void{
-      this.entrenadorService.getEntrenadores()
-      .subscribe(entrenadores => this.entrenadores = entrenadores);
-    }
+  ngOnInit() {
+    this.getEntrenador();
+  }
+  entrenadores: Entrenador[];
 
-    addEntrenador(nombres: string): void {
+  getEntrenador(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.entrenadorService.getEntrenador(id)
+      .subscribe(entrenador => this.entrenador = entrenador);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+ save(): void {
+    this.entrenadorService.updateEntrenador(this.entrenador)
+      .subscribe(() => this.goBack());
+  }
+
+  addEntrenador(nombres: string): void {
     nombres = nombres.trim();
     if (!nombres) { return; }
     this.entrenadorService.addEntrenador({ nombres } as Entrenador)
@@ -33,4 +49,4 @@ export class EntrenadorComponent implements OnInit {
         this.entrenadores.push(entrenador);
       });
   }
-  }
+}

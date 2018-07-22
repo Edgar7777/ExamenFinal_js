@@ -13,7 +13,7 @@ import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/
 export const RUTAS_APP: Routes = [
 
   {
-    path: 'Formulario/Entrenador',
+    path: 'Entrenador/Formulario',
     component: FormularioEntrenadorComponent
   },
   {
@@ -21,7 +21,7 @@ export const RUTAS_APP: Routes = [
     component: RutaInicioComponent
   },
   {
-    path: 'Entrenador',
+    path: 'Entrenador/:id',
     component: EntrenadorComponent,
     children: [
       {
@@ -42,10 +42,10 @@ export const RUTAS_APP: Routes = [
       },
     ]
   },
-  {
-    path: 'Entrenador/:id',
-    component: MostrarDetalleEntrenadorComponent,
-  },
+  // {
+  //   pa th: 'Entrenador/:id',
+  //   component: MostrarDetalleEntrenadorComponent,
+  // },
   {
     path: 'faq',
     component: RutaFaqComponent,

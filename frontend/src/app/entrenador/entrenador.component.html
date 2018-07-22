@@ -1,4 +1,17 @@
-<div align="center" class="container">
+<div *ngIf="entrenador">
+  <h2>{{entrenador.nombres | uppercase}} Entrenador</h2>
+  <div><span>id: </span>{{entrenador.id}}</div>
+  <div>
+    <label>nombre:
+      <input [(ngModel)]="entrenador.nombres" placeholder="nombres"/>
+    </label>
+  </div>
+  <button (click)="goBack()">regresar</button>
+  <!-- <button (click)="save()">guardar</button> -->
+</div>
+  
+
+<!-- <div align="center" class="container">
   <h1>ENTRENADOR</h1>
   <div class="row">
     <div *ngFor="let entrenador of entrenadores">
@@ -18,4 +31,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
