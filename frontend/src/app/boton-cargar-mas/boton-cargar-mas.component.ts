@@ -16,7 +16,7 @@ export class BotonCargarMasComponent implements OnInit {
 
   irAInfo() {
     const url = [
-      'inicio', 'entrenador'
+      'Home'
     ];
     this._router.navigate(url);
   }

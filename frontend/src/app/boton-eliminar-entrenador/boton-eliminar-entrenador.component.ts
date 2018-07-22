@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Entrenador } from '../entrenador';
 import { EntrenadorService } from '../entrenador.service';
 import { ActivatedRoute } from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-boton-eliminar-entrenador',
@@ -15,6 +16,7 @@ export class BotonEliminarEntrenadorComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private entrenadorService: EntrenadorService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -29,8 +31,15 @@ export class BotonEliminarEntrenadorComponent implements OnInit {
   }
 
   delete(id : number): void {
-    console.log('ete:', id);
+    console.log('ide del:', id);
     this.entrenadorService.deleteEntrenador(id).subscribe();
+  }
+  irAInfo() {
+    const url = [
+      'Home'
+    ];
+    this._router.navigate(url);
+    location.reload(true);
   }
 
 }

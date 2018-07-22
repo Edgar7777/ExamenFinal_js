@@ -12,5 +12,6 @@ export class BotonCrearEntrenadorComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }
