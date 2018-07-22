@@ -21,7 +21,9 @@ export class EntrenadorService {
 //METODO GET POR ID
   getEntrenador(id: number): Observable<Entrenador> {
     const url = `${this.entrenadorUrl}/${id}`;
-    return this.http.get<Entrenador>(url).pipe(
+    console.log('url :', url);
+    return this.http.get<Entrenador>(url)
+    .pipe(
       catchError(this.handleError<Entrenador>(`getEntrenador id=${id}`))
     );
   }
@@ -60,8 +62,8 @@ export class EntrenadorService {
    );
  }
 //METODO DELETE
- deleteEntrenador (entrenador: Entrenador | number): Observable<Entrenador> {
-   const id = typeof entrenador === 'number' ? entrenador : entrenador.idEntrenador;
+ deleteEntrenador (id : number): Observable<Entrenador> {
+   console.log('idEnt : ',id);
    const url = `${this.entrenadorUrl}/${id}`;
 
    return this.http.delete<Entrenador>(url, httpOptions)

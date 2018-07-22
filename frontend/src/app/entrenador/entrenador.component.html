@@ -1,4 +1,4 @@
-<div *ngIf="entrenador">
+<div align="center" *ngIf="entrenador">
   <h2>Entrenador</h2>
   <div><span>id: </span>{{entrenador.id}}</div>
   <div>
@@ -13,7 +13,10 @@
       </div>
     </div>
   </div>
-  <button type="button" class="btn btn-success" routerLink="../../Home">Regresar</button>
+  <app-boton-actualizar-entrenador></app-boton-actualizar-entrenador>
+  <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
+  <br />
+  <button type="button" class="btn btn-submit" routerLink="../../Home">Regresar</button>
 </div>
 
 

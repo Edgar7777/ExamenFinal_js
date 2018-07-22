@@ -37,8 +37,7 @@ export class FormularioEntrenadorComponent implements OnInit {
       });
   }
 
-  delete(entrenador: Entrenador): void {
-    this.entrenadores = this.entrenadores.filter(e => e !== entrenador);
-    this.entrenadorService.deleteEntrenador(entrenador).subscribe();
+  delete(id : number): void {
+    this.entrenadorService.deleteEntrenador(id).subscribe();
   }
 }
