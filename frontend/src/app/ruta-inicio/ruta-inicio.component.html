@@ -37,11 +37,14 @@
 
   <h1>ENTRENADORES</h1>
   <div class="row">
-    <a *ngFor="let entrenador of entrenadores" class="col-1-4">
+    <a #idTrainer *ngFor="let entrenador of entrenadores" class="col-1-4">
       <div class="module entrenador">
         <h5>nombre:{{entrenador.nombres}}<br />
+          <app-boton-actualizar-entrenador></app-boton-actualizar-entrenador>
+          <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
         numero medallas: {{entrenador.numeroMedallas}} <br />
       {{entrenador.imagenes}}</h5>
+      
       </div>
     </a>
   </div>
@@ -51,8 +54,8 @@
   <br />
   <div align="center" class="container">
     <app-boton-crear-entrenador></app-boton-crear-entrenador>
-    <app-boton-actualizar-entrenador></app-boton-actualizar-entrenador>
-    <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
+    <!-- <app-boton-actualizar-entrenador></app-boton-actualizar-entrenador>
+    <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador> -->
   </div>
 
   <br />

@@ -17,7 +17,14 @@ export class FormularioEntrenadorComponent implements OnInit {
   constructor(private entrenadorService: EntrenadorService) { }
 
   ngOnInit() {
+    this.getEntrenadores();
   }
+
+  getEntrenadores(): void {
+    this.entrenadorService.getEntrenadores()
+    .subscribe(entrenadores => this.entrenadores = entrenadores);
+  }
+
   addEntrenador(nombres: string, apellidos: string, fechaNacimiento: string, numeroMedallas: string): void {
     nombres = nombres.trim();
     apellidos = apellidos.trim();
