@@ -23,7 +23,6 @@ import { BotonEliminarEntrenadorComponent } from './boton-eliminar-entrenador/bo
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/mostrar-detalle-entrenador.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,10 +49,12 @@ import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/
     RouterModule.forRoot(
       RUTAS_APP,
       {
+        onSameUrlNavigation: 'reload',
         useHash: true
       }
     )
   ],
+  exports: [RouterModule],
   providers: [
     AutorizacionService
   ],
