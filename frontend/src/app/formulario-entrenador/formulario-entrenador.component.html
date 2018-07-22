@@ -39,9 +39,9 @@
 
 <ul class="entrenador">
   <li *ngFor="let entrenador of entrenadores">
-    <a routerLink="/Entrenador/{{entrenador.id}}">
+    <div routerLink="/Entrenador/{{entrenador.id}}">
       <span class="badge">{{entrenador.id}}</span> {{entrenador.nombres}}
-    </a>
+    </div>
     <button class="delete" title="eliminar entrenador"
       (click)="delete(entrenador)">Eliminar</button>
   </li>
