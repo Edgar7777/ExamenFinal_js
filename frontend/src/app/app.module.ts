@@ -23,6 +23,7 @@ import { BotonEliminarEntrenadorComponent } from './boton-eliminar-entrenador/bo
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/mostrar-detalle-entrenador.component';
 import { ListaEntrenadoresComponent } from './lista-entrenadores/lista-entrenadores.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ListaEntrenadoresComponent } from './lista-entrenadores/lista-entrenado
     BotonEliminarEntrenadorComponent,
     FormularioEntrenadorComponent,
     MostrarDetalleEntrenadorComponent,
-    ListaEntrenadoresComponent
+    ListaEntrenadoresComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

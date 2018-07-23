@@ -4,9 +4,15 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+
+const httpOptions = {//variable que describe las cabeceras de http
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class PokemonService {
 
   pokemonUrl = 'http://localhost:1337/pokemon';

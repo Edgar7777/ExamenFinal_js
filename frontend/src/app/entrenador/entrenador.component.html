@@ -21,8 +21,13 @@
       num Medallas:
     </label>
     <input [(ngModel)]="entrenador.numeroMedallas" placeholder="numero medallas" />
-
+    <br />
+    <app-boton-actualizar-entrenador></app-boton-actualizar-entrenador>
+    <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
   </div>
+  <br />
+  <div><span>POKEMONS DE </span>{{entrenador.nombres}}</div>
+  <br />
   <div class="row">
     <div *ngFor="let pokemon of entrenador.pokemons" class="col-1-4">
       <div class="module pokemon">
@@ -30,8 +35,6 @@
       </div>
     </div>
   </div>
-  <app-boton-actualizar-entrenador></app-boton-actualizar-entrenador>
-  <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
   <br />
   <button type="button" class="btn btn-submit" routerLink="../../Home">Regresar</button>
 </div>

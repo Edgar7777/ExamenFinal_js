@@ -10,6 +10,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/mostrar-detalle-entrenador.component';
 import { ListaEntrenadoresComponent } from './lista-entrenadores/lista-entrenadores.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 export const RUTAS_APP: Routes = [
@@ -17,6 +18,10 @@ export const RUTAS_APP: Routes = [
   {
     path: 'Entrenador/Formulario',
     component: FormularioEntrenadorComponent
+  },
+  {
+    path: 'Carrito',
+    component: CarritoComponent
   },
   {
     path: 'Home',
