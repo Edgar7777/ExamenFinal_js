@@ -38,7 +38,7 @@
   <h1>ENTRENADORES</h1>
   <div class="row">
     <a #idTrainer *ngFor="let entrenador of entrenadores" class="col-1-4">
-      <div class="module entrenador" routerLink="/Entrenador/{{entrenador.id}}">
+      <div *ngIf="tamanioArreglo()<=1" class="module entrenador" routerLink="/Entrenador/{{entrenador.id}}">
           <h5>nombre:{{entrenador.nombres}}<br />
           numero medallas: {{entrenador.numeroMedallas}} <br />
         {{entrenador.imagenes}}</h5>

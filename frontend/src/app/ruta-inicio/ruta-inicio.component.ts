@@ -36,4 +36,8 @@ export class RutaInicioComponent implements OnInit {
     .subscribe(pokemons => this.pokemons = pokemons);
   }
 
+  tamanioArreglo():number {
+    return this.entrenadores.length/8;
+  }
+
 }

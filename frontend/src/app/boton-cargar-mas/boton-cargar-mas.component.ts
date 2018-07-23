@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Entrenador } from '../entrenador';
+import { Pokemon } from '../pokemon';
+import { EntrenadorService } from '../entrenador.service';
+import { PokemonService } from '../pokemon.service';
 import {Router} from "@angular/router";
-import { RutaInicioComponent } from '../ruta-inicio/ruta-inicio.component';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-boton-cargar-mas',
@@ -9,16 +13,24 @@ import { RutaInicioComponent } from '../ruta-inicio/ruta-inicio.component';
 })
 export class BotonCargarMasComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  entrenadores: Entrenador[] = new Array();
+
+  constructor(
+    private route: ActivatedRoute,
+    private entrenadorService: EntrenadorService,
+    private _router: Router
+  ) { }
 
   ngOnInit() {
+    this.getEntrenadores();
   }
 
-  irAInfo() {
-    const url = [
-      'Home'
-    ];
-    this._router.navigate(url);
+  getEntrenadores(): void {
+    this.entrenadorService.getEntrenadores()
+    .subscribe(entrenadores => this.entrenadores = entrenadores);
   }
 
+  tamanioArreglo():number{
+    return this.entrenadores.length/9;
+  }
 }

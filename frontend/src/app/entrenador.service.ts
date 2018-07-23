@@ -79,4 +79,16 @@ export class EntrenadorService {
       catchError(this.handleError<any>('updateEntrenador'))
     );
   }
+
+  //Otro METODO
+
+  searchEntrenadores(term: string): Observable<Entrenador[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Entrenador[]>(`${this.entrenadorUrl}/?name=${term}`).pipe(
+      catchError(this.handleError<Entrenador[]>('searchHeroes', []))
+    );
+  }
 }

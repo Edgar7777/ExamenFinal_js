@@ -12,7 +12,7 @@
   <a class="active" href="#/Entrenador/Pokemon">Pokemon</a>
   <div class="search-container">
     <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
+      <input type="text" placeholder="Search.." name="">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
@@ -20,3 +20,18 @@
 
 </body>
 </html>
+
+
+<!-- <div id="search-component">
+  <h4>Search</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let entrenador of entrenadores$ | async" >
+      <a routerLink="/Entrenador/{{entrenador.id}}">
+        {{entrenador.nombres}}
+      </a>
+    </li>
+  </ul>
+</div> -->
