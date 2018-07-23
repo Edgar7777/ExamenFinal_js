@@ -3,8 +3,25 @@
   <div><span>id: </span>{{entrenador.id}}</div>
   <div>
     <label>
-      nombre: {{entrenador.nombres}}
+      Nombre:
     </label>
+    <input [(ngModel)]="entrenador.nombres" placeholder="nombres" />
+    <br />
+    <label>
+      Apellido:
+    </label>
+    <input [(ngModel)]="entrenador.apellidos" placeholder="apellidos" />
+    <br />
+    <label>
+      Fecha Nac:
+    </label>
+    <input [(ngModel)]="entrenador.fechaNacimiento" placeholder="Fecha de Nacimiento" />
+    <br />
+    <label>
+      num Medallas:
+    </label>
+    <input [(ngModel)]="entrenador.numeroMedallas" placeholder="numero medallas" />
+
   </div>
   <div class="row">
     <div *ngFor="let pokemon of entrenador.pokemons" class="col-1-4">
@@ -20,7 +37,7 @@
 </div>
 
 
-  <!-- <button (click)="save()">guardar</button> -->
+<!-- <button (click)="save()">guardar</button> -->
 
 
 <!-- <div align="center" class="container">

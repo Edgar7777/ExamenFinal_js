@@ -36,8 +36,8 @@ export class EntrenadorComponent implements OnInit {
     this.location.back();
   }
 
- save(): void {
-    this.entrenadorService.updateEntrenador(this.entrenador)
+ save(id : number): void {
+    this.entrenadorService.updateEntrenador(this.entrenador,id)
       .subscribe(() => this.goBack());
   }
 

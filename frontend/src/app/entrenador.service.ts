@@ -18,14 +18,14 @@ export class EntrenadorService {
 
   constructor(private http: HttpClient) { }
 
-//METODO GET POR ID
+  //METODO GET POR ID
   getEntrenador(id: number): Observable<Entrenador> {
     const url = `${this.entrenadorUrl}/${id}`;
     console.log('url :', url);
     return this.http.get<Entrenador>(url)
-    .pipe(
-      catchError(this.handleError<Entrenador>(`getEntrenador id=${id}`))
-    );
+      .pipe(
+        catchError(this.handleError<Entrenador>(`getEntrenador id=${id}`))
+      );
   }
 
   //METODO GET***************************
@@ -55,32 +55,34 @@ export class EntrenadorService {
     };
   }
   //METODO POST
-  addEntrenador (entrenador: Entrenador): Observable<Entrenador> {
-   return this.http.post<Entrenador>(this.entrenadorUrl, entrenador, httpOptions)
-   .pipe(
-    catchError(this.handleError<Entrenador>('addEntrenador'))
-   );
- }
-//METODO DELETE
- deleteEntrenador (id : number): Observable<Entrenador> {
-   console.log('idEnt : ',id);
-   const url = `${this.entrenadorUrl}/${id}`;
+  addEntrenador(entrenador: Entrenador): Observable<Entrenador> {
+    return this.http.post<Entrenador>(this.entrenadorUrl, entrenador, httpOptions)
+      .pipe(
+        catchError(this.handleError<Entrenador>('addEntrenador'))
+      );
+  }
+  //METODO DELETE
+  deleteEntrenador(id: number): Observable<Entrenador> {
+    console.log('idEnt : ', id);
+    const url = `${this.entrenadorUrl}/${id}`;
 
-   return this.http.delete<Entrenador>(url, httpOptions)
-   .pipe(
-     catchError(this.handleError<Entrenador>('deleteEntrenador'))
-   );
- }
-
- //METODO PUT
- updateEntrenador (entrenador: Entrenador): Observable<any> {
-    return this.http.put(this.entrenadorUrl, entrenador, httpOptions)
-    .pipe(
-      catchError(this.handleError<any>('updateEntrenador'))
-    );
+    return this.http.delete<Entrenador>(url, httpOptions)
+      .pipe(
+        catchError(this.handleError<Entrenador>('deleteEntrenador'))
+      );
   }
 
-  //Otro METODO
+  //METODO PUT
+  updateEntrenador(entrenador: Entrenador, id: number): Observable<any> {
+    console.log('idact2: ',id);
+    const url = `${this.entrenadorUrl}/${id}`;
+    return this.http.patch<any>(url, entrenador, httpOptions)
+      .pipe(
+        catchError(this.handleError<any>('updateEntrenador'))
+      );
+  }
+
+  //Otro METODO para el Search
 
   searchEntrenadores(term: string): Observable<Entrenador[]> {
     if (!term.trim()) {
