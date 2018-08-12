@@ -22,7 +22,6 @@ export class EntrenadorService {
   //METODO GET POR ID
   getEntrenador(id: number): Observable<Entrenador> {
     const url = `${this.entrenadorUrl}/${id}`;
-    console.log('url :', url);
     return this.http.get<Entrenador>(url)
       .pipe(
         catchError(this.handleError<Entrenador>(`getEntrenador id=${id}`))

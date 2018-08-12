@@ -7,7 +7,7 @@ import { PokemonService } from '../pokemon.service';
 import { BuscadorComponent } from '../buscador/buscador.component';
 import { BotonCargarMasComponent } from '../boton-cargar-mas/boton-cargar-mas.component';
 import { BotonCrearEntrenadorComponent } from '../boton-crear-entrenador/boton-crear-entrenador.component';
-import { BotonActualizarEntrenadorComponent } from '../boton-actualizar-entrenador/boton-actualizar-entrenador.component';
+//import { BotonActualizarEntrenadorComponent } from '../boton-actualizar-entrenador/boton-actualizar-entrenador.component';
 import { BotonEliminarEntrenadorComponent } from '../boton-eliminar-entrenador/boton-eliminar-entrenador.component';
 
 @Component({

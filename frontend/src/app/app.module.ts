@@ -56,6 +56,9 @@ import { CarritoComponent } from './carrito/carrito.component';
         onSameUrlNavigation: 'reload',
         useHash: true
       }
+    ),
+    RouterModule.forChild(
+      RUTAS_APP
     )
   ],
   exports: [RouterModule],

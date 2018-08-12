@@ -23,44 +23,14 @@
     <input [(ngModel)]="entradaNumeroMedallas" placeholder="{{entrenador.numeroMedallas}}" />
     <br />
   <button type="button" class="btn btn-success" (click)="save()" (click)="irAInfo()">Actualizar</button>
+
     <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
+
   </div>
-  <br />
-  <div><span>POKEMONS DE </span>{{entrenador.nombres}}</div>
-  <br />
-  <div class="row">
-    <div *ngFor="let pokemon of entrenador.pokemons" class="col-1-4">
-      <div class="module pokemon">
-        <h4>{{pokemon.nombrePokemon}}</h4>
-      </div>
-    </div>
+
+  <div><span>POKEMONS DE </span>{{entrenador.nombres}}
+    <br />
+    <br />
+      <router-outlet></router-outlet>
   </div>
-  <br />
-  <button type="button" class="btn btn-submit" routerLink="../../Home">Regresar</button>
-</div>
-
-
-<!-- <button (click)="save()">guardar</button> -->
-
-
-<!-- <div align="center" class="container">
-  <h1>ENTRENADOR</h1>
-  <div class="row">
-    <div *ngFor="let entrenador of entrenadores">
-      <div class="module entrenador">
-        <h4>{{entrenador.nombres}}</h4>
-        <br />
-        <br />
-        <br />
-        <br />
-        <div class="row">
-          <div *ngFor="let pokemon of entrenador.pokemons" class="col-1-4">
-            <div class="module pokemon">
-              <h4>{{pokemon.nombrePokemon}}</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-</div> -->
