@@ -18,7 +18,7 @@ import { RutaNoEncontradaComponent } from './ruta-no-encontrada/ruta-no-encontra
 import { EntrenadorComponent } from './entrenador/entrenador.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { BotonCrearEntrenadorComponent } from './boton-crear-entrenador/boton-crear-entrenador.component';
-import { BotonActualizarEntrenadorComponent } from './boton-actualizar-entrenador/boton-actualizar-entrenador.component';
+//import { BotonActualizarEntrenadorComponent } from './boton-actualizar-entrenador/boton-actualizar-entrenador.component';
 import { BotonEliminarEntrenadorComponent } from './boton-eliminar-entrenador/boton-eliminar-entrenador.component';
 import { FormularioEntrenadorComponent } from './formulario-entrenador/formulario-entrenador.component';
 import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/mostrar-detalle-entrenador.component';
@@ -38,7 +38,7 @@ import { CarritoComponent } from './carrito/carrito.component';
     EntrenadorComponent,
     PokemonComponent,
     BotonCrearEntrenadorComponent,
-    BotonActualizarEntrenadorComponent,
+    //BotonActualizarEntrenadorComponent,
     BotonEliminarEntrenadorComponent,
     FormularioEntrenadorComponent,
     MostrarDetalleEntrenadorComponent,

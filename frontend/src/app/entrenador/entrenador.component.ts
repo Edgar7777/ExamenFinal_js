@@ -46,8 +46,9 @@ export class EntrenadorComponent implements OnInit {
 
  save(): void {
    this.entrenadorEntrada = new Entrenador();
-   this.getEntrenador();
-     this.entrenadorEntrada.idEntrenador = this.entrenador.idEntrenador;
+   //this.getEntrenador();
+     const id = +this.route.snapshot.paramMap.get('id');
+     this.entrenadorEntrada.idEntrenador = id;
      console.log('aqui estoy con: ' ,this.entrenador.idEntrenador);
    this.entrenadorEntrada.nombres = this.entradaNombres;
    this.entrenadorEntrada.apellidos = this.entradaApellidos;
