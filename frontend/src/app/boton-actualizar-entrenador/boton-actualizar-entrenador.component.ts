@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Entrenador } from '../entrenador';
 import { EntrenadorService } from '../entrenador.service';
 import { ActivatedRoute } from "@angular/router";
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
+import { EntrenadorComponent } from "../entrenador/entrenador.component";
 
 @Component({
   selector: 'app-boton-actualizar-entrenador',
@@ -12,6 +13,8 @@ import {Router} from "@angular/router";
 export class BotonActualizarEntrenadorComponent implements OnInit {
 
   @Input() entrenador: Entrenador;
+  @Input() nombres;
+  entrenadorEntrada: Entrenador;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,17 +33,29 @@ export class BotonActualizarEntrenadorComponent implements OnInit {
       .subscribe(entrenador => this.entrenador = entrenador);
   }
 
-  save(id : number): void {
-    console.log("idact: ",id);
-     this.entrenadorService.updateEntrenador(this.entrenador, id)
-   }
+  save(): void {
+    //  console.log("idact: ",id);
+    this.entrenadorEntrada = new Entrenador();
+    this.getEntrenador();
+      this.entrenadorEntrada.idEntrenador = this.entrenador.idEntrenador;
+      console.log('aqui estoy con: ' ,this.entrenador.idEntrenador);
+    this.entrenadorEntrada.nombres = this.nombres;
+    this.entrenadorEntrada.apellidos = this.entrenador.apellidos;
+    this.entrenadorEntrada.fechaNacimiento = this.entrenador.fechaNacimiento;
+    this.entrenadorEntrada.campeonActual = this.entrenador.campeonActual;
+    this.entrenadorEntrada.imagenes = this.entrenador.imagenes;
+
+    this.entrenadorService.updateEntrenador(this.entrenadorEntrada)
+      .subscribe(response => {
+      });
+  }
 
   irAInfo() {
     const url = [
       'Home'
     ];
     this._router.navigate(url);
-    location.reload(true);
+    //location.reload(true);
   }
 
 }

@@ -5,24 +5,24 @@
     <label>
       Nombre:
     </label>
-    <input [(ngModel)]="entrenador.nombres" placeholder="nombres" />
+    <input [(ngModel)]="entradaNombres" placeholder= {{entrenador.nombres}} />
     <br />
     <label>
       Apellido:
     </label>
-    <input [(ngModel)]="entrenador.apellidos" placeholder="apellidos" />
+    <input [(ngModel)]="entradaApellidos" placeholder={{entrenador.apellidos}} />
     <br />
     <label>
       Fecha Nac:
     </label>
-    <input [(ngModel)]="entrenador.fechaNacimiento" placeholder="Fecha de Nacimiento" />
+    <input [(ngModel)]="entradaFechaNacimiento" placeholder={{entrenador.fechaNacimiento}} />
     <br />
     <label>
       num Medallas:
     </label>
-    <input [(ngModel)]="entrenador.numeroMedallas" placeholder="numero medallas" />
+    <input [(ngModel)]="entradaNumeroMedallas" placeholder="{{entrenador.numeroMedallas}}" />
     <br />
-    <app-boton-actualizar-entrenador></app-boton-actualizar-entrenador>
+  <button type="button" class="btn btn-success" (click)="save()" (click)="irAInfo()">Actualizar</button>
     <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
   </div>
   <br />

@@ -15,6 +15,7 @@ const httpOptions = {//variable que describe las cabeceras de http
 export class EntrenadorService {
 
   entrenadorUrl = 'http://localhost:1337/entrenador';
+  urlBase = 'http://localhost:1337';
 
   constructor(private http: HttpClient) { }
 
@@ -73,12 +74,12 @@ export class EntrenadorService {
   }
 
   //METODO PUT
-  updateEntrenador(entrenador: Entrenador, id: number): Observable<any> {
-    console.log('idact2: ',id);
-    const url = `${this.entrenadorUrl}/${id}`;
-    return this.http.patch<any>(url, entrenador, httpOptions)
+  updateEntrenador(entrenador: Entrenador): Observable<any> {
+    console.log('idact2: ',entrenador.idEntrenador);
+    const url = `${this.entrenadorUrl}/${entrenador.idEntrenador}`;
+    return this.http.put<any>(url, entrenador, httpOptions)
       .pipe(
-        catchError(this.handleError<any>('updateEntrenador'))
+        catchError(this.handleError<any>('updateuser'))
       );
   }
 

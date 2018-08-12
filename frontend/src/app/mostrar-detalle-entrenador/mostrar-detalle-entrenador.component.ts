@@ -13,6 +13,7 @@ import { EntrenadorService } from '../entrenador.service';
 export class MostrarDetalleEntrenadorComponent implements OnInit {
 
   @Input() entrenador: Entrenador;
+  entrenadorEntrada: Entrenador;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,8 +36,17 @@ export class MostrarDetalleEntrenadorComponent implements OnInit {
  }
 
 save(): void {
-   this.entrenadorService.updateEntrenador(this.entrenador)
-     .subscribe(() => this.goBack());
+   this.entrenadorEntrada = new Entrenador();
+   this.entrenadorEntrada.idEntrenador=this.entrenador.idEntrenador;
+   this.entrenadorEntrada.nombres=this.entrenador.nombres;
+    this.entrenadorEntrada.apellidos=this.entrenador.apellidos;
+     this.entrenadorEntrada.fechaNacimiento=this.entrenador.fechaNacimiento;
+     this.entrenadorEntrada.campeonActual=this.entrenador.campeonActual;
+     this.entrenadorEntrada.imagenes=this.entrenador.imagenes;
+
+   this.entrenadorService.updateEntrenador(this.entrenadorEntrada)
+     .subscribe(response => {
+    });
  }
 
 }
