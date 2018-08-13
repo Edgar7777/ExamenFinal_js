@@ -22,15 +22,16 @@
     </label>
     <input [(ngModel)]="entradaNumeroMedallas" placeholder="{{entrenador.numeroMedallas}}" />
     <br />
-  <button type="button" class="btn btn-success" (click)="save()" (click)="irAInfo()">Actualizar</button>
+  <button type="button" class="btn btn-success" (click)="save()" (click)="irAHome()">Actualizar</button>
 
     <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
+    <br />
+    <br />
 
   </div>
 
-  <div><span>POKEMONS DE </span>{{entrenador.nombres}}
+    <button type="button" class="btn btn-info" (click)="save()" (click)="irAInfo()">Pokemons de {{entrenador.nombres}}</button>
     <br />
     <br />
       <router-outlet></router-outlet>
-  </div>
   </div>

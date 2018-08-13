@@ -3,9 +3,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }  from '@angular/common/http';
 import {RouterModule} from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+
 
 import {AutorizacionService} from "./autorizacion.service";
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RUTAS_APP} from "./app.routes";
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
@@ -24,6 +29,7 @@ import { FormularioEntrenadorComponent } from './formulario-entrenador/formulari
 import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/mostrar-detalle-entrenador.component';
 import { ListaEntrenadoresComponent } from './lista-entrenadores/lista-entrenadores.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { ListaPokemonsComponent } from './lista-pokemons/lista-pokemons.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +49,18 @@ import { CarritoComponent } from './carrito/carrito.component';
     FormularioEntrenadorComponent,
     MostrarDetalleEntrenadorComponent,
     ListaEntrenadoresComponent,
-    CarritoComponent
+    CarritoComponent,
+    ListaPokemonsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    MatInputModule,
+    NoopAnimationsModule,
     RouterModule.forRoot(
       RUTAS_APP,
       {
@@ -63,7 +74,7 @@ import { CarritoComponent } from './carrito/carrito.component';
   ],
   exports: [RouterModule],
   providers: [
-    AutorizacionService
+    AutorizacionService,
   ],
   bootstrap: [AppComponent]
 })

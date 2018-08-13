@@ -12,6 +12,7 @@ import { FormularioEntrenadorComponent } from './formulario-entrenador/formulari
 import { MostrarDetalleEntrenadorComponent } from './mostrar-detalle-entrenador/mostrar-detalle-entrenador.component';
 import { ListaEntrenadoresComponent } from './lista-entrenadores/lista-entrenadores.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { ListaPokemonsComponent } from './lista-pokemons/lista-pokemons.component';
 
 
 export const RUTAS_APP: Routes = [
@@ -38,7 +39,7 @@ export const RUTAS_APP: Routes = [
     children: [
       {
         path: 'Pokemon',
-        component: PokemonComponent,
+        component: ListaPokemonsComponent,
       },
       // {
       //   path: 'permisos',
@@ -54,6 +55,16 @@ export const RUTAS_APP: Routes = [
       // },
     ]
   },
+  {
+    path: 'Entrenador/:id/Pokemon/:id',
+    component: PokemonComponent,
+
+  },
+  {
+    path: 'Detalle/:id',
+    component: MostrarDetalleEntrenadorComponent,
+  },
+
   // {
   //   pa th: 'Entrenador/:id',
   //   component: MostrarDetalleEntrenadorComponent,

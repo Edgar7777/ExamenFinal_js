@@ -1,0 +1,19 @@
+<div class="container">
+
+  <a *ngFor="let entrenador of entrenadores">
+      <a *ngFor="let pokemon of pokemons" class="row">
+        <a *ngIf="pokemon.entrenadorId==entrenador.idEntrenador && pokemon.nombrePokemon!=null" class="module entrenador">
+          <h4>{{pokemon.entrenadorId}}</h4>
+          <h4>{{pokemon.nombrePokemon}}</h4>
+        </a>
+      </a>
+    </a>
+
+  <!-- <a *ngFor="let entrenador of entrenadores">
+      <a *ngIf="entrenador.idEntrenador==27">
+      <div class="grid grid-pad">
+
+    </div>
+    </a>
+  </a> -->
+</div>

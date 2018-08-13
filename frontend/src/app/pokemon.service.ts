@@ -15,7 +15,8 @@ const httpOptions = {//variable que describe las cabeceras de http
 
 export class PokemonService {
 
-  pokemonUrl = 'http://localhost:1337/pokemon';
+  pokemonUrl = 'http://localhost:1337/entrenador';
+  private urlBase = 'http://localhost:1337';
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +30,58 @@ export class PokemonService {
       );
       //TODO: el pipe desvia a un catch error cuando no funciona el metodo getPokemons
   }
+
+  getPokemonByEntrenador(entrenadorId: number){
+    const url = `${this.urlBase}/Pokemon?entrenadorId=${entrenadorId}`;
+    return this.http.get<Pokemon>(url);
+  }
+  getLibroByName(nombre: string) {
+    const url = `${this.urlBase}/Pokemon?nombrePokemon=${nombre}`;
+    return this.http.get<Pokemon[]>(url);
+  }
+
+  getPokemon(id: number): Observable<Pokemon> {
+    const url = `${this.pokemonUrl}/${id}`;
+    return this.http.get<Pokemon>(url)
+      .pipe(
+        catchError(this.handleError<Pokemon>(`getPokemon id=${id}`))
+      );
+  }
+
+  //METODO POST
+  addPokemon(pokemon: Pokemon): Observable<Pokemon> {
+    return this.http.post<Pokemon>(this.pokemonUrl, pokemon, httpOptions)
+      .pipe(
+        catchError(this.handleError<Pokemon>('addPokemon'))
+      );
+  }
+
+  //METODO DELETE
+  deletePokemon(id: number): Observable<Pokemon> {
+    console.log('idEnt : ', id);
+    const url = `${this.pokemonUrl}/${id}`;
+
+    return this.http.delete<Pokemon>(url, httpOptions)
+      .pipe(
+        catchError(this.handleError<Pokemon>('deletePokemon'))
+      );
+  }
+
+  //METODO PUT
+  updatePokemon(pokemon: Pokemon): Observable<any> {
+    console.log('idact2: ',pokemon.idPokemon);
+    const url = `${this.pokemonUrl}/${pokemon.idPokemon}`;
+    return this.http.put<any>(url, pokemon, httpOptions)
+      .pipe(
+        catchError(this.handleError<any>('updatePokemon'))
+      );
+  }
+
+
+
+
+
+
 
   private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {

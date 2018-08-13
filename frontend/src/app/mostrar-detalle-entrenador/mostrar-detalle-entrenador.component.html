@@ -1,11 +1,103 @@
-<div *ngIf="entrenador">
+<!-- <div *ngIf="entrenador">
   <h2>{{entrenador.nombres | uppercase}} Entrenador</h2>
   <div><span>id: </span>{{entrenador.id}}</div>
   <div>
     <label>nombre:
-      <input [(ngModel)]="entradaNombres" placeholder="nombres"/>
+      <input [(ngModel)]="entrenador.nombres" placeholder="nombres"/>
     </label>
   </div>
   <button (click)="goBack()">regresar</button>
   <button (click)="save()">guardar</button>
+</div> -->
+
+<div class="row" xmlns="http://www.w3.org/1999/html">
+    <div class="col-6">
+      <div class="container">
+        <ngb-tabset>
+          <ngb-tab title='ATRIBUTOS DE ENTRENADOR'>
+            <ng-template ngbTabContent>
+              <br><br>
+              <p><strong>Id: </strong>{{entrenador.idEntrenador}}</p>
+              <p><strong>Nombre:</strong> {{entrenador.nombres}}</p>
+              <p><strong>Apellido:</strong> {{entrenador.apellidos}}</p>
+              <p><strong>fecha de nacimmiento:</strong> {{entrenador.fechaNacimiento}}</p>
+              <p><strong>numero Medallas:</strong> {{entrenador.numeroMedallas}}</p>
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">EDITAR</button>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  <div class="col-6">
+    <img class="card-img-top" src={{entrenador.imagenes}}  width="100" height="300"  alt="Card image cap">
+  </div>
+</div>
+
+<br />
+<br />
+
+<div class="container">
+  <a *ngFor="let pokemon of pokemons">
+      <!-- <div class="card" style="width: 18rem;"> -->
+      {{pokemon.entrenadorId}}
+        <div class="card-body">
+          <p class="card-text"><strong>Datos Pokemon</strong></p>
+          <p class="card-text">Nombre Pokemon: {{pokemon.nombrePokemon}}</p>
+          <!-- <p class="card-text">Numero Pokemon :{{pokeArray[numeroPokemon]}}</p>
+          <p class="card-text">Nivel :{{pokeArray[nivel]}}</p>
+          <p class="card-text">Fecha Captura: {{pokeArray[fechaCaptura]}}</p>
+          <p class="card-text">poder Especial Uno: {{pokeArray[poderEspecialUno]}}</p> -->
+
+          <!-- <a href="#" class="btn btn-primary" [routerLink]="['/detalle/',poke['id']]">MOSTRAR DETALLE</a> -->
+        <!-- </div> -->
+      </div>
+  </a>
+</div>
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Actualizar</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="nombre" [(ngModel)]="entradaNombres">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="apellido" [(ngModel)]="entradaApellidos">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="Fecha Nacimiento" [(ngModel)]="entradaFechaNacimiento">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="Numero de Medallas" [(ngModel)]="entradaNumeroMedallas">
+          </mat-form-field>
+        </div>
+        <div class="class" align="center">
+          <mat-form-field class="example-form">
+            <input matInput placeholder="URL de imagen" [(ngModel)]="entradaImagenes">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button (click)="save()" type="button" class="btn btn-danger" data-dismiss="modal" >GUARDAR</button>
+      </div>
+
+    </div>
+  </div>
 </div>

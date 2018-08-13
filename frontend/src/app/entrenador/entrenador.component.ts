@@ -15,7 +15,6 @@ import { Router } from "@angular/router";
 export class EntrenadorComponent implements OnInit {
 
   @Input() entrenador: Entrenador;
-  @Input() nombres;
   entrenadorEntrada: Entrenador;
   entradaNombres : string;
   entradaApellidos : string;
@@ -61,9 +60,18 @@ export class EntrenadorComponent implements OnInit {
      });
   }
 
-  irAInfo() {
+  irAHome() {
     const url = [
       'Home'
+    ];
+    this._router.navigate(url);
+    location.reload(true);
+  }
+
+  irAInfo() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    const url = [
+      'Entrenador',id,'Pokemon'
     ];
     this._router.navigate(url);
     location.reload(true);

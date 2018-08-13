@@ -1,3 +1,37 @@
-<a>
-  pokemon works!
-</a>
+<div align="center" *ngIf="entrenador">
+  <h2>Entrenador</h2>
+  <div><span>id: </span>{{entrenador.id}}</div>
+  <div>
+    <label>
+      Nombre:
+    </label>
+    <input [(ngModel)]="entradaNombres" placeholder= {{entrenador.nombres}} />
+    <br />
+    <label>
+      Apellido:
+    </label>
+    <input [(ngModel)]="entradaApellidos" placeholder={{entrenador.apellidos}} />
+    <br />
+    <label>
+      Fecha Nac:
+    </label>
+    <input [(ngModel)]="entradaFechaNacimiento" placeholder={{entrenador.fechaNacimiento}} />
+    <br />
+    <label>
+      num Medallas:
+    </label>
+    <input [(ngModel)]="entradaNumeroMedallas" placeholder="{{entrenador.numeroMedallas}}" />
+    <br />
+  <button type="button" class="btn btn-success" (click)="save()" (click)="irAHome()">Actualizar</button>
+
+    <app-boton-eliminar-entrenador></app-boton-eliminar-entrenador>
+    <br />
+    <br />
+
+  </div>
+
+    <button type="button" class="btn btn-info" (click)="save()" (click)="irAInfo()">Pokemons de {{entrenador.nombres}}</button>
+    <br />
+    <br />
+      <router-outlet></router-outlet>
+  </div>
