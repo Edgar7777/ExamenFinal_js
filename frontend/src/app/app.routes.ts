@@ -1,6 +1,5 @@
 import { RouterModule, Routes } from "@angular/router";
 import { AutorizacionService } from "./autorizacion.service";
-import { PokemonService } from "./pokemon.service";
 import { RutaInicioComponent } from './ruta-inicio/ruta-inicio.component';
 import { RutaIniUsuarioComponent } from './ruta-ini-usuario/ruta-ini-usuario.component';
 import { RutaIniPermisosComponent } from './ruta-ini-permisos/ruta-ini-permisos.component';
@@ -39,20 +38,8 @@ export const RUTAS_APP: Routes = [
     children: [
       {
         path: 'Pokemon',
-        component: ListaPokemonsComponent,
+        component: PokemonComponent
       },
-      // {
-      //   path: 'permisos',
-      //   component: RutaIniPermisosComponent,
-      //   canActivate: [
-      //     AutorizacionService
-      //   ]
-      // },
-      // {
-      //   path: '',
-      //   redirectTo: 'Entrenador',
-      //   pathMatch: 'full'
-      // },
     ]
   },
   {

@@ -67,9 +67,6 @@ import { ListaPokemonsComponent } from './lista-pokemons/lista-pokemons.componen
         onSameUrlNavigation: 'reload',
         useHash: true
       }
-    ),
-    RouterModule.forChild(
-      RUTAS_APP
     )
   ],
   exports: [RouterModule],

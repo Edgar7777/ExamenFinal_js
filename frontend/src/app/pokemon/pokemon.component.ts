@@ -19,7 +19,7 @@ export class PokemonComponent implements OnInit {
   @Input() entrenador: Entrenador;
   @Input() pokemon:Pokemon;
   pokemonEntrada: Pokemon;
-  
+
 
   entradaIdPokemon : number;
   entradaNumeroPokemon : number;
@@ -97,4 +97,5 @@ export class PokemonComponent implements OnInit {
         this.entrenadores.push(entrenador);
       });
   }
+
 }
